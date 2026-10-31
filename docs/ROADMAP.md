@@ -49,7 +49,7 @@ Updated: 2026-10-31
   - AGP 8.11.0, Kotlin 2.1.20, Gradle 8.14.3 (cached locally), compileSdk/targetSdk 36, minSdk 26.
   - JDK 21 is installed with scoop: `$env:JAVA_HOME="$HOME\scoop\apps\temurin21-jdk\current"`.
 - App ID: `dev.wary.kawach`. It can't change after the first Play upload, so confirm it before uploading.
-- Repo: https://github.com/007wary/kawach (private).
+- Repo: https://github.com/007wary/kawach (public for now, no license). Never commit secrets. Push straight to `main`: no PRs, no Dependabot.
 
 ## Backend decision (confirmed 2026-10-31)
 
