@@ -1,0 +1,11 @@
+{
+  "name": "kawach-web",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.4.0"
+  }
+}

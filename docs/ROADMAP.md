@@ -35,6 +35,7 @@ Updated: 2026-10-31
   | Google Maps | the free map tiles run out |
 
 - Free-tier catches:
+  - Firestore TTL policies need billing, so Spark can't use them. Old data is deleted by a daily Vercel Cron instead.
   - Vercel Hobby can't be used commercially.
   - Supabase's free tier pauses after 7 days of inactivity.
   - A new Play account needs a closed test with 12 testers for 14 days before public release.
@@ -71,14 +72,52 @@ Updated: 2026-10-31
 - English, Hindi and Assamese strings. The Hindi and Assamese are drafts that need native-speaker review.
 - Checked on the emulator: home screen, and a shared digital-arrest message gives HIGH RISK with 5 warning signs and highlights.
 
+### Kawach milestone 2, family link: DONE
+
+- **Roles.** The guardian signs in with Google. The elder gets an anonymous Firebase account and types the guardian's 6-digit code. One phone is either an elder or a guardian.
+- **Pairing.** `POST /api/invite` gives the guardian a code that works once, for 15 minutes. `POST /api/pair` links the elder (up to 3 guardians). Each account gets 5 wrong codes an hour.
+- **Alerts.** When a linked elder checks a message, every check goes to the guardians (blueprint: "the guardian always sees the message"). `POST /api/notify`:
+  - Masks phone and account numbers, on the phone and again on the server.
+  - Saves the check and sends a data-only FCM push.
+  - The guardian replies "safe" or "scam" on the alert screen, and the elder gets a push and sees the reply on the result screen.
+- **Call button.** The guardian saves the elder's phone number on their own phone only. It's never uploaded.
+- **Firestore.** Clients can only read; all writes go through the Vercel API (Admin SDK). The exceptions are each user's own `users/{uid}` doc and unlinking. Rules and indexes are in `firebase/`.
+  - `users/{uid}`: role, language, fcm_tokens, updated_at
+  - `family_links/{elderId}_{guardianId}`: elder_id, guardian_id, elder_name, guardian_name, invite_code, status, created_at
+  - `checks/{elderId}_{clientId}`: elder_id, elder_name, guardian_ids[], input_type, masked_text, verdict, scam_type, red_flags[], guardian_reply, created_at, expire_at
+  - `invites/{code}` and `pair_attempts/{uid}`: server only
+- **30-day deletion.** Firestore TTL needs billing, so `/api/cleanup` runs as a daily Vercel Cron at 02:00 IST.
+- 4 new unit tests for the masking.
+
+**Cloud setup: done 2026-10-31.**
+
+- Anonymous sign-in is enabled.
+- Firestore rules and the index are deployed.
+- `FIREBASE_SERVICE_ACCOUNT` and `CRON_SECRET` are in Vercel production, and `web/` is deployed.
+
+**Tested end to end on 2026-10-31.** The `Pixel_7` emulator was the guardian (007cyberspawn), and a script called the API as the elder.
+
+- Google sign-in, and a code from `/api/invite`.
+- A wrong code is rejected, the right code links, and a reused code is rejected.
+- The elder's check reaches the emulator as a push ("Test Maa checked a message · HIGH RISK · Digital arrest scam").
+- The alert screen shows the warning signs and highlights, with the numbers masked.
+- The "scam" reply is saved, and the elder reads it back through the rules.
+- The rules deny an elder reading another user's doc, writing checks directly, or replying through the API.
+- Found and fixed: the FCM token was saved only at sign-in, so one network failure meant no alerts ever. It's now saved again on every app start (`Family.syncToken`).
+- **Elder side, tested on the user's real phone (2026-10-31):** code entry → linked to Cyber Spawn → a KYC message checked → "Sent to…" card → the guardian replied "scam" from the emulator → the reply came back to the phone.
+
+**Follow-ups:**
+
+- Panic mode: "I already paid" on the Help screen alerts the guardians.
+- When a guardian unlinks, they can still read that elder's old checks until they're deleted at 30 days.
+
 ## Cloud setup (done 2026-10-31)
 
 ### Firebase
 
 - Project ID `kawach-wary` (display name "Kawach"), on the free Spark plan.
 - **Created under 007cyberspawn@gmail.com.** The main account had hit its Google Cloud project quota, and Google's quota form needs a billing account.
-- 007mwnswrangwary@gmail.com was invited as Owner. Accept the invitation email if you haven't yet.
-- The CLI has both accounts. Use `--account 007cyberspawn@gmail.com` until the main account's Owner access is active.
+- 007mwnswrangwary@gmail.com is an **Owner** (accepted and confirmed). The main account manages it like any other project, and CLI commands work without `--account`.
 - Android app `dev.wary.kawach`: App ID `1:817272712548:android:c3dbf4db3d8a422b2d9e71`.
   - Debug SHA-1 and SHA-256 are registered.
   - Before the Play release, add the release and Play App Signing SHA keys.
@@ -91,20 +130,15 @@ Updated: 2026-10-31
 - Project `kawach` (scope 007warys-projects), deployed from `web/`.
 - Production domain https://kawach-app.vercel.app. `kawach.vercel.app` was already taken.
 - Pages: `/` (home) and `/privacy` (the privacy policy for the Play listing). The policy names the developer and shows the contact email 007mwnswrangwary@gmail.com.
-- `/api/notify` comes in milestone 2.
+- `/api/invite`, `/api/pair`, `/api/notify` and `/api/cleanup` (daily cron) are live. Functions run in `bom1` (Mumbai), next to Firestore.
 
 ## Next steps, in order
 
 1. ~~Install and log in to the Firebase CLI~~: done.
 2. ~~Confirm the backend~~: confirmed, Firebase + Vercel.
 3. ~~Create the Firebase project and Android app~~: done (see Cloud setup above).
-4. **Kawach milestone 2, family link:**
-   - Google sign-in for the guardian.
-   - Invite-code pairing for the elder.
-   - Firestore schema: users, family_links, checks.
-   - FCM push to the guardian through the Vercel `/api/notify` function.
-   - Guardian alert screen with "Safe" and "Scam" replies.
-5. ~~Vercel project and privacy policy~~: done. `/api/notify` is still to build, as part of milestone 2.
+4. ~~Kawach milestone 2, family link~~: done.
+5. ~~Vercel project and privacy policy~~: done.
 6. Milestone 3: screenshot check with on-device ML Kit OCR.
 7. Milestone 4: weekly scam lessons, plus an admin panel on Vercel Hobby for editing patterns.
 8. Play Console: internal testing, then a closed test (12 testers for 14 days; recruit through AssamJobDesk), then production.

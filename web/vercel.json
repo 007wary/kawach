@@ -1,3 +1,5 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "regions": ["bom1"],
+  "crons": [{ "path": "/api/cleanup", "schedule": "30 20 * * *" }]
 }

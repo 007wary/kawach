@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Status-bar icon: the launcher shield with the check mark cut out. Android tints it. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillType="evenOdd"
+        android:pathData="M12,2 L20,5 L20,11 C20,16 16.6,19.8 12,22 C7.4,19.8 4,16 4,11 L4,5 Z M8.3,12.2 L10.9,14.8 L15.9,9.4 L14.6,8.2 L10.9,12.2 L9.6,10.9 Z" />
+</vector>

@@ -23,6 +23,7 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -36,6 +37,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import dev.wary.kawach.R
+import dev.wary.kawach.family.Family
+import dev.wary.kawach.family.Session
 import dev.wary.kawach.ui.theme.LocalStatusColors
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -45,6 +48,7 @@ fun HomeScreen(
     onCheckText: (String) -> Unit,
     onHelp: () -> Unit,
     onLearn: () -> Unit,
+    onFamily: () -> Unit,
 ) {
     val context = LocalContext.current
     @Suppress("DEPRECATION") // LocalClipboard's suspend API needs Compose 1.8 ClipEntry plumbing; this is enough for plain text.
@@ -66,7 +70,7 @@ fun HomeScreen(
             )
         }
 
-        StatusCard()
+        StatusCard(onClick = onFamily)
 
         Surface(
             onClick = onCheck,
@@ -148,10 +152,24 @@ fun HomeScreen(
     }
 }
 
+/** This phone's protection, plus the family link: who is linked, and any alerts waiting for a guardian. */
 @Composable
-private fun StatusCard() {
+private fun StatusCard(onClick: () -> Unit) {
     val status = LocalStatusColors.current
+    val session by Family.session.collectAsState()
+    val links by Family.links.collectAsState()
+    val alerts by Family.alerts.collectAsState()
+    val familyLine = when {
+        session is Session.Guardian && links.isEmpty() -> stringResource(R.string.home_status_guardian_none)
+        session is Session.Guardian -> stringResource(R.string.home_status_guardian, links.joinToString { it.elderName })
+        links.isEmpty() -> stringResource(R.string.home_status_family)
+        else -> stringResource(R.string.home_status_family_on, links.joinToString { it.guardianName })
+    }
+    val dayAgo = System.currentTimeMillis() - 24 * 60 * 60 * 1000
+    val waiting = alerts.count { it.reply == null && (it.createdAt?.time ?: 0) > dayAgo }
+
     Surface(
+        onClick = onClick,
         shape = RoundedCornerShape(16.dp),
         color = MaterialTheme.colorScheme.surfaceVariant,
         modifier = Modifier.fillMaxWidth(),
@@ -171,10 +189,18 @@ private fun StatusCard() {
                 )
             }
             Text(
-                text = stringResource(R.string.home_status_family),
+                text = familyLine,
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
+            if (waiting > 0) {
+                Text(
+                    text = stringResource(R.string.home_status_alerts, waiting),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.error,
+                    fontWeight = FontWeight.Bold,
+                )
+            }
         }
     }
 }

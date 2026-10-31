@@ -1,0 +1,27 @@
+rules_version = '2';
+
+// Kawach. Clients only read, except their own users/{uid} doc and unlinking.
+// Links, checks and replies are written by the Vercel API (web/api), which uses the Admin SDK.
+// invites and pair_attempts have no client rules, so clients can't touch them.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /users/{uid} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow create, update: if request.auth != null && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['role', 'language', 'fcm_tokens', 'updated_at'])
+        && (!('role' in request.resource.data) || request.resource.data.role in ['elder', 'guardian']);
+    }
+
+    match /family_links/{linkId} {
+      // Either side can see the link and remove it.
+      allow read, delete: if request.auth != null
+        && (request.auth.uid == resource.data.elder_id || request.auth.uid == resource.data.guardian_id);
+    }
+
+    match /checks/{checkId} {
+      allow read: if request.auth != null
+        && (request.auth.uid == resource.data.elder_id || request.auth.uid in resource.data.guardian_ids);
+    }
+  }
+}

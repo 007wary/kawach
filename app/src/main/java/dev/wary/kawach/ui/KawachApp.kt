@@ -24,11 +24,13 @@ import androidx.compose.ui.res.stringResource
 import dev.wary.kawach.R
 import dev.wary.kawach.rules.ScamRules
 import dev.wary.kawach.rules.Verdict
+import java.util.UUID
 
 /** Something another app or the widget asked Kawach to do. */
 sealed interface Incoming {
     data class Shared(val text: String) : Incoming
     data object OpenCheck : Incoming
+    data class OpenAlert(val checkId: String) : Incoming
 }
 
 sealed interface Screen {
@@ -36,7 +38,15 @@ sealed interface Screen {
     data object Learn : Screen
     data object Help : Screen
     data object Check : Screen
-    data class Result(val text: String, val verdict: Verdict) : Screen
+    data object Family : Screen
+    data class Alert(val checkId: String) : Screen
+
+    /** [sendId] identifies this check to the family API, so a repeat send doesn't alert twice. */
+    data class Result(
+        val text: String,
+        val verdict: Verdict,
+        val sendId: String = UUID.randomUUID().toString(),
+    ) : Screen
 }
 
 private data class Tab(val screen: Screen, val label: Int, val icon: ImageVector)
@@ -77,6 +87,10 @@ fun KawachApp(incoming: Incoming?, onIncomingHandled: () -> Unit) {
                 reset(Screen.Home)
                 push(Screen.Check)
             }
+            is Incoming.OpenAlert -> {
+                reset(Screen.Home)
+                push(Screen.Alert(incoming.checkId))
+            }
             null -> return@LaunchedEffect
         }
         onIncomingHandled()
@@ -114,6 +128,7 @@ fun KawachApp(incoming: Incoming?, onIncomingHandled: () -> Unit) {
                     onCheckText = ::checkText,
                     onHelp = { reset(Screen.Help) },
                     onLearn = { reset(Screen.Learn) },
+                    onFamily = { push(Screen.Family) },
                 )
                 Screen.Learn -> LearnScreen()
                 Screen.Help -> HelpScreen()
@@ -127,9 +142,15 @@ fun KawachApp(incoming: Incoming?, onIncomingHandled: () -> Unit) {
                 is Screen.Result -> ResultScreen(
                     text = current.text,
                     verdict = current.verdict,
+                    sendId = current.sendId,
                     onBack = ::pop,
                     onHelp = { reset(Screen.Help) },
                 )
+                Screen.Family -> FamilyScreen(
+                    onBack = ::pop,
+                    onOpenAlert = { push(Screen.Alert(it)) },
+                )
+                is Screen.Alert -> AlertScreen(checkId = current.checkId, onBack = ::pop)
             }
         }
     }
