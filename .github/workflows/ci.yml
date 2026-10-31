@@ -5,9 +5,11 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Every push to main gets its own result: runs queue instead of cancelling each other.
+# (Public repo, so Actions minutes are free.)
 concurrency:
   group: ci-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
   contents: read
