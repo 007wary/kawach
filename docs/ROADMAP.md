@@ -142,12 +142,16 @@ Updated: 2026-10-31
 5. ~~Vercel project and privacy policy~~: done.
 6. Milestone 3: screenshot check with on-device ML Kit OCR.
 7. Milestone 4: weekly scam lessons, plus an admin panel on Vercel Hobby for editing patterns.
-8. Play Console: internal testing, then a closed test (12 testers for 14 days; recruit through AssamJobDesk), then production.
-9. Blueprint roadmap from here:
+8. **Must-dos before the Play listing:**
+   - **In-app "Delete my account".** Play requires it for apps with sign-in. Add a `/api/delete-account` endpoint that removes the user's doc, links, checks and auth user.
+   - The listing's deletion URL is https://kawach-app.vercel.app/delete-account (live).
+   - Tests for the Firestore rules, run on the Firebase emulator in CI.
+9. Play Console: internal testing, then a closed test (12 testers for 14 days; recruit through AssamJobDesk), then production.
+10. Blueprint roadmap from here:
    - **Months 3–4:** beta with 100 families.
    - **Months 5–8:** family plan at ₹49/month, then turn on the parked LLM check and voice; add call screening and Bengali/Bodo.
    - **Months 9–12:** bank or cooperative pilot, iOS, grants.
-10. **Surokkha** field validation runs during Kawach's beta:
+11. **Surokkha** field validation runs during Kawach's beta:
     - survey 200 women commuters
     - map 20 routes
     - meet the Guwahati police women's cell
