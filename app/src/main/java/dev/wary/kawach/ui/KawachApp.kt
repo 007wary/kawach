@@ -1,5 +1,6 @@
 package dev.wary.kawach.ui
 
+import android.net.Uri
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.consumeWindowInsets
@@ -29,6 +30,7 @@ import java.util.UUID
 /** Something another app or the widget asked Kawach to do. */
 sealed interface Incoming {
     data class Shared(val text: String) : Incoming
+    data class SharedImage(val uri: Uri, val caption: String?) : Incoming
     data object OpenCheck : Incoming
     data class OpenAlert(val checkId: String) : Incoming
 }
@@ -40,11 +42,16 @@ sealed interface Screen {
     data object Check : Screen
     data object Family : Screen
     data class Alert(val checkId: String) : Screen
+    data class Reading(val uri: Uri, val caption: String? = null) : Screen
 
-    /** [sendId] identifies this check to the family API, so a repeat send doesn't alert twice. */
+    /**
+     * [sendId] identifies this check to the family API, so a repeat send doesn't alert twice.
+     * [fromPicture] means [text] was read from a screenshot, so words may be missing.
+     */
     data class Result(
         val text: String,
         val verdict: Verdict,
+        val fromPicture: Boolean = false,
         val sendId: String = UUID.randomUUID().toString(),
     ) : Screen
 }
@@ -75,13 +82,18 @@ fun KawachApp(incoming: Incoming?, onIncomingHandled: () -> Unit) {
         stack.add(screen)
     }
 
-    fun checkText(text: String) = push(Screen.Result(text, ScamRules.check(text)))
+    fun checkText(text: String, fromPicture: Boolean = false) =
+        push(Screen.Result(text, ScamRules.check(text), fromPicture))
 
     LaunchedEffect(incoming) {
         when (incoming) {
             is Incoming.Shared -> {
                 reset(Screen.Home)
                 checkText(incoming.text)
+            }
+            is Incoming.SharedImage -> {
+                reset(Screen.Home)
+                push(Screen.Reading(incoming.uri, incoming.caption))
             }
             Incoming.OpenCheck -> {
                 reset(Screen.Home)
@@ -138,10 +150,12 @@ fun KawachApp(incoming: Incoming?, onIncomingHandled: () -> Unit) {
                         pop()
                         checkText(text)
                     },
+                    onPicture = { push(Screen.Reading(it)) },
                 )
                 is Screen.Result -> ResultScreen(
                     text = current.text,
                     verdict = current.verdict,
+                    fromPicture = current.fromPicture,
                     sendId = current.sendId,
                     onBack = ::pop,
                     onHelp = { reset(Screen.Help) },
@@ -151,6 +165,17 @@ fun KawachApp(incoming: Incoming?, onIncomingHandled: () -> Unit) {
                     onOpenAlert = { push(Screen.Alert(it)) },
                 )
                 is Screen.Alert -> AlertScreen(checkId = current.checkId, onBack = ::pop)
+                is Screen.Reading -> ReadingScreen(
+                    uri = current.uri,
+                    caption = current.caption,
+                    onBack = ::pop,
+                    onRead = { text ->
+                        // Back from the result goes to where the picture came from, not to the spinner.
+                        pop()
+                        if (stack.last() == Screen.Check) pop()
+                        checkText(text, fromPicture = true)
+                    },
+                )
             }
         }
     }

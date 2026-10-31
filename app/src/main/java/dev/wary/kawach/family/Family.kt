@@ -108,11 +108,11 @@ object Family {
      * Sends a check to every linked guardian and returns the check's ID.
      * [clientId] makes it safe to call again for the same check: the API sends the alert only once.
      */
-    suspend fun sendCheck(clientId: String, text: String, verdict: Verdict): String {
+    suspend fun sendCheck(clientId: String, text: String, verdict: Verdict, fromPicture: Boolean): String {
         val body = JSONObject()
             .put("type", "check")
             .put("client_id", clientId)
-            .put("input_type", "text")
+            .put("input_type", if (fromPicture) "image" else "text")
             .put("masked_text", Mask.numbers(text).take(MAX_TEXT))
             .put("verdict", verdict.risk.name)
             .put("scam_type", verdict.scamType?.name ?: JSONObject.NULL)

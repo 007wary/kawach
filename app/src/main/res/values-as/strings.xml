@@ -11,7 +11,7 @@
     <string name="home_status_ok">এই ফোনটো সুৰক্ষিত</string>
     <string name="home_status_family">পৰিয়ালৰ সতৰ্কবাণী: এতিয়াও সংযোগ কৰা হোৱা নাই। সংযোগ কৰিবলৈ টিপক।</string>
     <string name="home_check_title">বাৰ্তা পৰীক্ষা কৰক</string>
-    <string name="home_check_sub">সন্দেহজনক SMS, WhatsApp বাৰ্তা বা পইচাৰ অনুৰোধ</string>
+    <string name="home_check_sub">সন্দেহজনক SMS, WhatsApp বাৰ্তা, স্ক্ৰীণশ্বট বা পইচাৰ অনুৰোধ</string>
     <string name="home_paste">পেষ্ট কৰি পৰীক্ষা কৰক</string>
     <string name="home_clipboard_empty">এতিয়াও একো কপি কৰা হোৱা নাই। প্ৰথমে বাৰ্তাটো কপি কৰক, তাৰ পিছত আকৌ টিপক।</string>
     <string name="home_paid">মই ইতিমধ্যে পইচা দিলোঁ। সহায় কৰক!</string>
@@ -22,7 +22,15 @@
     <string name="check_hint">বাৰ্তাটো ইয়াত পেষ্ট বা টাইপ কৰক</string>
     <string name="check_paste">পেষ্ট</string>
     <string name="check_button">পৰীক্ষা কৰক</string>
-    <string name="check_tip">পৰামৰ্শ: WhatsApp বা Messages-ত বাৰ্তাটো হেঁচি ধৰি থাকক, Share টিপক, তাৰ পিছত Kawach বাছক।</string>
+    <string name="check_tip">পৰামৰ্শ: WhatsApp বা Messages-ত বাৰ্তাটো হেঁচি ধৰি থাকক, Share টিপক, তাৰ পিছত Kawach বাছক। স্ক্ৰীণশ্বটৰ বাবে Gallery-ত খুলি Share টিপক, তাৰ পিছত Kawach বাছক।</string>
+    <string name="check_picture">স্ক্ৰীণশ্বট পৰীক্ষা কৰক</string>
+    <string name="reading_title">ছবিখন পঢ়ি আছে</string>
+    <string name="reading_wait">ছবিখনৰ শব্দবোৰ পঢ়ি আছে। ই আপোনাৰ ফোনতে থাকে।</string>
+    <string name="reading_no_words">Kawach-এ এই ছবিখনত কোনো শব্দ বিচাৰি নাপালে। আৰু স্পষ্ট স্ক্ৰীণশ্বট এখন চেষ্টা কৰক, বা বাৰ্তাটো কপি কৰি পেষ্ট কৰক।</string>
+    <string name="reading_not_ready">Kawach-এ এতিয়াও ছবি পঢ়িবলৈ সাজু হৈ আছে। ইণ্টাৰনেট সংযোগ কৰি এক মিনিট পিছত আকৌ চেষ্টা কৰক।</string>
+    <string name="reading_failed">Kawach-এ এই ছবিখন খুলিব নোৱাৰিলে। আন এখন চেষ্টা কৰক, বা বাৰ্তাটো কপি কৰি পেষ্ট কৰক।</string>
+    <string name="reading_back">উভতি যাওক</string>
+    <string name="result_from_picture">Kawach-এ এই শব্দবোৰ ছবিৰ পৰা পঢ়িছে। যদি কিছুমান শব্দ বাদ পৰিছে বা ভুল, তেন্তে বাৰ্তাটো কপি কৰি পেষ্ট কৰক।</string>
 
     <string name="result_title">ফলাফল</string>
     <string name="risk_high">অতি বিপদজনক</string>

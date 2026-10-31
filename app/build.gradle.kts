@@ -69,6 +69,7 @@ dependencies {
     implementation(libs.androidx.credentials.play.services.auth)
     implementation(libs.googleid)
     implementation(libs.kotlinx.coroutines.play.services)
+    implementation(libs.mlkit.text.devanagari)
     debugImplementation(libs.androidx.ui.tooling)
 
     testImplementation(libs.junit)

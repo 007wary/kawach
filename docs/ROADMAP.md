@@ -84,7 +84,7 @@ Updated: 2026-10-31
 - **Firestore.** Clients can only read; all writes go through the Vercel API (Admin SDK). The exceptions are each user's own `users/{uid}` doc and unlinking. Rules and indexes are in `firebase/`.
   - `users/{uid}`: role, language, fcm_tokens, updated_at
   - `family_links/{elderId}_{guardianId}`: elder_id, guardian_id, elder_name, guardian_name, invite_code, status, created_at
-  - `checks/{elderId}_{clientId}`: elder_id, elder_name, guardian_ids[], input_type, masked_text, verdict, scam_type, red_flags[], guardian_reply, created_at, expire_at
+  - `checks/{elderId}_{clientId}`: elder_id, elder_name, guardian_ids[], input_type (text | image | other), masked_text, verdict, scam_type, red_flags[], guardian_reply, created_at, expire_at
   - `invites/{code}` and `pair_attempts/{uid}`: server only
 - **30-day deletion.** Firestore TTL needs billing, so `/api/cleanup` runs as a daily Vercel Cron at 02:00 IST.
 - 4 new unit tests for the masking.
@@ -106,8 +106,24 @@ Updated: 2026-10-31
 - Found and fixed: the FCM token was saved only at sign-in, so one network failure meant no alerts ever. It's now saved again on every app start (`Family.syncToken`).
 - **Elder side, tested on the user's real phone (2026-10-31):** code entry → linked to Cyber Spawn → a KYC message checked → "Sent to…" card → the guardian replied "scam" from the emulator → the reply came back to the phone.
 
+### Kawach milestone 3, screenshot check: DONE
+
+- **Two ways in:**
+  - "Share → Check with Kawach" now accepts images too (from Gallery, Files, WhatsApp). A caption shared with the picture is checked with it.
+  - "Check a screenshot" button on the Check screen. It uses Android's photo picker, so it needs no storage permission. Some phones say they have the picker but can't open it (the `Pixel_7` emulator crashed this way), so it falls back to the standard file chooser.
+- **OCR on the phone:** ML Kit text recognition, Devanagari model, through Google Play services (`play-services-mlkit-text-recognition-devanagari` 16.0.2), so the APK stays small. The model is listed in the manifest (`ocr_devanagari`), so Play installs it with the app. On a sideloaded app it downloads on first use: Kawach asks Play services for it and waits up to 40 seconds before showing "still getting ready".
+- **Privacy:** the picture never leaves the phone. Only the words read from it go to family, masked like any check. `checks.input_type` is now `text`, `image` or `other`; there's no new field. The privacy policy now covers screenshots.
+- The result screen says "Kawach read these words from the picture… if words are missing or wrong, paste the message instead".
+- **Tested on the emulator (2026-10-31)** with drawn chat screenshots:
+  - English + Hindi KYC scam → HIGH RISK, fake bank/KYC, through both the share sheet (Files app) and the Check screen button.
+  - Assamese KYC scam: **ML Kit does read Assamese (Bengali) script**, with a few letters wrong ("কৰক" → "কবক", a stray hasanta in "কওক"). That first gave a wrong LOW result. Fixed by adding "KYC আপডেট", "KYC अपडेट" and the "একাউন্ট" spelling to the account-block rule. Now HIGH, with a unit test on the exact OCR text.
+  - Error screen when a picture can't be opened.
+- **Seen once:** right after first use, Play services killed Kawach to update its shared TFLite module ("Module config changed, forcing restart"). That's Play services behaviour, not a Kawach bug, and it didn't happen again.
+- **Not tested yet:** a real WhatsApp image share, and the founder's phone.
+
 **Follow-ups:**
 
+- Rules miss more when OCR misreads Assamese letters. Collect real screenshots in beta and add the common misreadings, or count it towards the "rules miss more than 20%" trigger for the LLM check.
 - Panic mode: "I already paid" on the Help screen alerts the guardians.
 - When a guardian unlinks, they can still read that elder's old checks until they're deleted at 30 days.
 
@@ -140,7 +156,7 @@ Updated: 2026-10-31
 3. ~~Create the Firebase project and Android app~~: done (see Cloud setup above).
 4. ~~Kawach milestone 2, family link~~: done.
 5. ~~Vercel project and privacy policy~~: done.
-6. Milestone 3: screenshot check with on-device ML Kit OCR.
+6. ~~Milestone 3: screenshot check with on-device ML Kit OCR~~: done.
 7. Milestone 4: weekly scam lessons, plus an admin panel on Vercel Hobby for editing patterns.
 8. **Must-dos before the Play listing:**
    - **In-app "Delete my account".** Play requires it for apps with sign-in. Add a `/api/delete-account` endpoint that removes the user's doc, links, checks and auth user.

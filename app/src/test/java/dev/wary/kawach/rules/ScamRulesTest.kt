@@ -36,6 +36,14 @@ class ScamRulesTest {
         assertEquals(ScamType.BANK_KYC, v.scamType)
     }
 
+    /** Exact words ML Kit read from an Assamese screenshot on the emulator, misreadings included. */
+    @Test
+    fun assameseKycScreenshotIsHigh() {
+        val v = check("আপোনাৰ বেংক একাউন্ট আজি বন্ধ হৈ যাব।\nএতিয়াই\nKYC আপডেট কবক আৰ oTP কও্ক।")
+        assertEquals(Risk.HIGH, v.risk)
+        assertEquals(ScamType.BANK_KYC, v.scamType)
+    }
+
     @Test
     fun upiCollectTrap() {
         val v = check("Enter your UPI PIN to receive ₹5,000 cashback from PhonePe")

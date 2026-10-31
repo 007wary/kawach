@@ -1,6 +1,7 @@
 package dev.wary.kawach
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -8,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.core.content.IntentCompat
 import dev.wary.kawach.family.AlertService
 import dev.wary.kawach.family.Family
 import dev.wary.kawach.ui.Incoming
@@ -37,10 +39,19 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun parse(intent: Intent?): Incoming? = when (intent?.action) {
-        Intent.ACTION_SEND -> listOfNotNull(
-            intent.getStringExtra(Intent.EXTRA_SUBJECT),
-            intent.getStringExtra(Intent.EXTRA_TEXT),
-        ).joinToString("\n").takeIf { it.isNotBlank() }?.let(Incoming::Shared)
+        Intent.ACTION_SEND -> {
+            val text = listOfNotNull(
+                intent.getStringExtra(Intent.EXTRA_SUBJECT),
+                intent.getStringExtra(Intent.EXTRA_TEXT),
+            ).joinToString("\n").takeIf { it.isNotBlank() }
+            val image = if (intent.type?.startsWith("image/") == true) {
+                IntentCompat.getParcelableExtra(intent, Intent.EXTRA_STREAM, Uri::class.java)
+            } else {
+                null
+            }
+            // A WhatsApp picture can come with a caption: read both.
+            image?.let { Incoming.SharedImage(it, text) } ?: text?.let(Incoming::Shared)
+        }
         ACTION_CHECK -> Incoming.OpenCheck
         ACTION_OPEN_CHECK -> intent.getStringExtra(EXTRA_CHECK_ID)?.let(Incoming::OpenAlert)
         else -> null

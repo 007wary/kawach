@@ -49,6 +49,7 @@ A scam shield for elders in India, with a family guardian mode. It's a native An
     - `AlertService` (FCM, data-only messages)
     - `Mask` (hides 6+ digit numbers)
     - `ElderPhones` (local only)
+  - `ocr/`: `PictureText` reads a screenshot's words on the phone (ML Kit through Play services). The picture is never uploaded.
   - `ui/`: Compose screens. Navigation is a simple back stack in `KawachApp.kt`, with no nav library and no ViewModels.
   - `widget/`: Glance home-screen widget.
 - **Roles.** A guardian signs in with Google. An elder gets an anonymous Firebase account and joins with a 6-digit code. One phone is one or the other.

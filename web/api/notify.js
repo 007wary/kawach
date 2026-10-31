@@ -34,7 +34,7 @@ async function sendCheck(user, body) {
       elder_id: user.uid,
       elder_name: elderName,
       guardian_ids: guardianIds,
-      input_type: body.input_type === "text" ? "text" : "other",
+      input_type: ["text", "image"].includes(body.input_type) ? body.input_type : "other",
       masked_text: maskNumbers(String(body.masked_text ?? "").slice(0, MAX_TEXT)),
       verdict: body.verdict,
       scam_type: scamType,

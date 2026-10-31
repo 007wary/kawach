@@ -79,7 +79,11 @@ internal val SIGNALS: List<Signal> = listOf(
         latin = listOf(
             """\b(account (will be|has been|is|shall be) (blocked|suspended|closed|frozen|deactivated|on hold)|kyc (update|updation|expired|pending|verification|not (done|updated|completed))|update (your )?(kyc|pan)|pan (card )?(is )?not (linked|updated)|sim (card )?(will be|is being) (blocked|deactivated))\b""",
         ),
-        native = listOf("खाता बंद", "खाता ब्लॉक", "केवाईसी", "একাউণ্ট বন্ধ", "একাউণ্ট ব্লক"),
+        // Both Assamese spellings of "account" are common (ণ্ট and ন্ট), and screenshots read either way.
+        native = listOf(
+            "खाता बंद", "खाता ब्लॉक", "केवाईसी", "kyc अपडेट",
+            "একাউণ্ট বন্ধ", "একাউণ্ট ব্লক", "একাউন্ট বন্ধ", "একাউন্ট ব্লক", "kyc আপডেট",
+        ),
     ),
     Signal(
         RECEIVE_BY_PIN, weight = 4, critical = true, votes = mapOf(UPI_COLLECT to 5),

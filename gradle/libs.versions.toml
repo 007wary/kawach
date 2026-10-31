@@ -12,6 +12,7 @@ firebaseBom = "34.0.0"
 credentials = "1.5.0"
 googleid = "1.1.1"
 coroutinesPlayServices = "1.10.2"
+mlkitTextDevanagari = "16.0.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -33,6 +34,7 @@ androidx-credentials = { group = "androidx.credentials", name = "credentials", v
 androidx-credentials-play-services-auth = { group = "androidx.credentials", name = "credentials-play-services-auth", version.ref = "credentials" }
 googleid = { group = "com.google.android.libraries.identity.googleid", name = "googleid", version.ref = "googleid" }
 kotlinx-coroutines-play-services = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-play-services", version.ref = "coroutinesPlayServices" }
+mlkit-text-devanagari = { group = "com.google.android.gms", name = "play-services-mlkit-text-recognition-devanagari", version.ref = "mlkitTextDevanagari" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

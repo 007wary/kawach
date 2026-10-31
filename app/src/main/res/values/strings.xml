@@ -11,7 +11,7 @@
     <string name="home_status_ok">Protected on this phone</string>
     <string name="home_status_family">Family alerts: not set up yet. Tap to set up.</string>
     <string name="home_check_title">Check a message</string>
-    <string name="home_check_sub">An SMS, WhatsApp message or payment request you are unsure about</string>
+    <string name="home_check_sub">An SMS, WhatsApp message, screenshot or payment request you are unsure about</string>
     <string name="home_paste">Paste and check</string>
     <string name="home_clipboard_empty">Nothing is copied yet. Copy the message first, then tap again.</string>
     <string name="home_paid">I already paid. Help!</string>
@@ -22,7 +22,15 @@
     <string name="check_hint">Paste or type the message here</string>
     <string name="check_paste">Paste</string>
     <string name="check_button">Check</string>
-    <string name="check_tip">Tip: in WhatsApp or Messages, press and hold the message, tap Share, then choose Kawach.</string>
+    <string name="check_tip">Tip: in WhatsApp or Messages, press and hold the message, tap Share, then choose Kawach. For a screenshot, open it in Gallery, tap Share, then choose Kawach.</string>
+    <string name="check_picture">Check a screenshot</string>
+    <string name="reading_title">Reading the picture</string>
+    <string name="reading_wait">Reading the words in the picture. This stays on your phone.</string>
+    <string name="reading_no_words">Kawach could not find any words in this picture. Try a clearer screenshot, or copy the message and paste it.</string>
+    <string name="reading_not_ready">Kawach is still getting ready to read pictures. Connect to the internet and try again in a minute.</string>
+    <string name="reading_failed">Kawach could not open this picture. Try another one, or copy the message and paste it.</string>
+    <string name="reading_back">Go back</string>
+    <string name="result_from_picture">Kawach read these words from the picture. If words are missing or wrong, copy the message and paste it instead.</string>
 
     <string name="result_title">Result</string>
     <string name="risk_high">HIGH RISK</string>

@@ -1,5 +1,10 @@
 package dev.wary.kawach.ui
 
+import android.content.ActivityNotFoundException
+import android.net.Uri
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -22,10 +27,18 @@ import androidx.compose.ui.unit.dp
 import dev.wary.kawach.R
 
 @Composable
-fun CheckScreen(onBack: () -> Unit, onSubmit: (String) -> Unit) {
+fun CheckScreen(onBack: () -> Unit, onSubmit: (String) -> Unit, onPicture: (Uri) -> Unit) {
     var text by rememberSaveable { mutableStateOf("") }
     @Suppress("DEPRECATION")
     val clipboard = LocalClipboardManager.current
+    // Android's photo picker: no storage permission, and Kawach only sees the one picture chosen.
+    val pickPicture = rememberLauncherForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
+        uri?.let(onPicture)
+    }
+    // Some phones say they have the photo picker but can't open it; the older file chooser works everywhere.
+    val choosePicture = rememberLauncherForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+        uri?.let(onPicture)
+    }
 
     ScreenColumn(Modifier.imePadding()) {
         ScreenHeader(stringResource(R.string.check_title), onBack)
@@ -57,6 +70,21 @@ fun CheckScreen(onBack: () -> Unit, onSubmit: (String) -> Unit) {
             ) {
                 Text(stringResource(R.string.check_button))
             }
+        }
+
+        OutlinedButton(
+            onClick = {
+                try {
+                    pickPicture.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
+                } catch (_: ActivityNotFoundException) {
+                    choosePicture.launch("image/*")
+                }
+            },
+            modifier = Modifier
+                .fillMaxWidth()
+                .heightIn(min = TouchHeight),
+        ) {
+            Text(stringResource(R.string.check_picture))
         }
 
         Text(

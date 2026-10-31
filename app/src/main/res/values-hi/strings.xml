@@ -11,7 +11,7 @@
     <string name="home_status_ok">यह फ़ोन सुरक्षित है</string>
     <string name="home_status_family">परिवार अलर्ट: अभी सेट नहीं है। सेट करने के लिए छुएँ।</string>
     <string name="home_check_title">संदेश जाँचें</string>
-    <string name="home_check_sub">कोई SMS, WhatsApp संदेश या पैसे की माँग जिस पर आपको शक हो</string>
+    <string name="home_check_sub">कोई SMS, WhatsApp संदेश, स्क्रीनशॉट या पैसे की माँग जिस पर आपको शक हो</string>
     <string name="home_paste">पेस्ट करके जाँचें</string>
     <string name="home_clipboard_empty">अभी कुछ कॉपी नहीं हुआ है। पहले संदेश कॉपी करें, फिर दोबारा दबाएँ।</string>
     <string name="home_paid">मैंने पैसे भेज दिए। मदद करें!</string>
@@ -22,7 +22,15 @@
     <string name="check_hint">संदेश यहाँ पेस्ट या टाइप करें</string>
     <string name="check_paste">पेस्ट</string>
     <string name="check_button">जाँचें</string>
-    <string name="check_tip">सुझाव: WhatsApp या Messages में संदेश को दबाकर रखें, Share दबाएँ, फिर Kawach चुनें।</string>
+    <string name="check_tip">सुझाव: WhatsApp या Messages में संदेश को दबाकर रखें, Share दबाएँ, फिर Kawach चुनें। स्क्रीनशॉट के लिए उसे Gallery में खोलें, Share दबाएँ, फिर Kawach चुनें।</string>
+    <string name="check_picture">स्क्रीनशॉट जाँचें</string>
+    <string name="reading_title">तस्वीर पढ़ी जा रही है</string>
+    <string name="reading_wait">तस्वीर के शब्द पढ़े जा रहे हैं। यह आपके फ़ोन पर ही रहती है।</string>
+    <string name="reading_no_words">Kawach को इस तस्वीर में कोई शब्द नहीं मिला। साफ़ स्क्रीनशॉट आज़माएँ, या संदेश कॉपी करके पेस्ट करें।</string>
+    <string name="reading_not_ready">Kawach अभी तस्वीरें पढ़ने की तैयारी कर रहा है। इंटरनेट चालू करें और एक मिनट बाद फिर कोशिश करें।</string>
+    <string name="reading_failed">Kawach यह तस्वीर नहीं खोल सका। दूसरी तस्वीर आज़माएँ, या संदेश कॉपी करके पेस्ट करें।</string>
+    <string name="reading_back">वापस जाएँ</string>
+    <string name="result_from_picture">Kawach ने ये शब्द तस्वीर से पढ़े हैं। अगर कुछ शब्द छूट गए या गलत हैं, तो संदेश कॉपी करके पेस्ट करें।</string>
 
     <string name="result_title">नतीजा</string>
     <string name="risk_high">बहुत ख़तरनाक</string>

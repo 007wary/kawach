@@ -46,7 +46,14 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.flowOf
 
 @Composable
-fun ResultScreen(text: String, verdict: Verdict, sendId: String, onBack: () -> Unit, onHelp: () -> Unit) {
+fun ResultScreen(
+    text: String,
+    verdict: Verdict,
+    fromPicture: Boolean,
+    sendId: String,
+    onBack: () -> Unit,
+    onHelp: () -> Unit,
+) {
     val context = LocalContext.current
     val scheme = MaterialTheme.colorScheme
     val session by Family.session.collectAsState()
@@ -68,9 +75,16 @@ fun ResultScreen(text: String, verdict: Verdict, sendId: String, onBack: () -> U
 
         Text(stringResource(R.string.result_message), style = MaterialTheme.typography.titleMedium)
         MessageCard(text, verdict.highlights)
+        if (fromPicture) {
+            Text(
+                text = stringResource(R.string.result_from_picture),
+                style = MaterialTheme.typography.bodyMedium,
+                color = scheme.onSurfaceVariant,
+            )
+        }
 
         if (session is Session.Elder && links.isNotEmpty()) {
-            FamilySendCard(sendId, text, verdict, links, onShare = { shareWithFamily(context, shareText) })
+            FamilySendCard(sendId, text, verdict, fromPicture, links, onShare = { shareWithFamily(context, shareText) })
         } else {
             Button(
                 onClick = { shareWithFamily(context, shareText) },
@@ -109,6 +123,7 @@ private fun FamilySendCard(
     sendId: String,
     text: String,
     verdict: Verdict,
+    fromPicture: Boolean,
     links: List<FamilyLink>,
     onShare: () -> Unit,
 ) {
@@ -119,7 +134,7 @@ private fun FamilySendCard(
     LaunchedEffect(sendId, attempt) {
         failed = false
         try {
-            checkId = Family.sendCheck(sendId, text, verdict)
+            checkId = Family.sendCheck(sendId, text, verdict, fromPicture)
         } catch (e: CancellationException) {
             throw e
         } catch (_: Exception) {
