@@ -27,7 +27,7 @@ A scam shield for elders in India, with a family guardian mode. It's a native An
 | `web/api/` | `invite` (guardian code), `pair` (elder joins), `notify` (alerts and replies), `cleanup` (daily cron, deletes data older than 30 days). |
 | `firebase/` | Firestore security rules and indexes, deployed with the Firebase CLI. |
 | `docs/` | Roadmap and blueprint. |
-| `.github/` | CI workflow, Dependabot, and the placeholder Firebase config that CI uses. |
+| `.github/` | CI workflow, and the placeholder Firebase config that CI uses. |
 
 ## Set up a development machine
 
@@ -66,12 +66,15 @@ A scam shield for elders in India, with a family guardian mode. It's a native An
 
 ## CI
 
-GitHub Actions ([ci.yml](.github/workflows/ci.yml)) runs on every push to `main` and on every pull request:
+GitHub Actions ([ci.yml](.github/workflows/ci.yml)) runs on every push to `main`. You can also start it by hand from the Actions tab.
 
 - **Android:** unit tests, lint, and a debug build. It uses the placeholder [`.github/ci/google-services.json`](.github/ci/google-services.json), so the APK it builds can't reach Firebase.
 - **Web:** `npm test` (masking tests that match `MaskTest.kt`) and a syntax check of every API function.
 
-Dependabot opens grouped update PRs every month. Kotlin is pinned at 2.1.20, so check CI before merging library bumps.
+**Workflow:** commit and push straight to `main`. There are no pull requests and no Dependabot. Library updates are done on purpose, and CI checks each push.
+
+- Kotlin is pinned at 2.1.20.
+- AGP 9 / Gradle 9 / Firebase BOM 35 / firebase-admin 14 are planned upgrades, not routine ones.
 
 ## Before release
 
