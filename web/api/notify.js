@@ -3,7 +3,8 @@
 //     The elder's phone saves a check and alerts every linked guardian.
 //   { type: "reply", check_id, reply: "safe" | "scam" }
 //     A guardian answers, and the elder's phone gets the reply.
-import { ALREADY_EXISTS, db, FieldValue, HttpError, maskNumbers, route, sendTo, Timestamp } from "../lib/firebase.js";
+import { ALREADY_EXISTS, db, FieldValue, HttpError, route, sendTo, Timestamp } from "../lib/firebase.js";
+import { maskNumbers } from "../lib/mask.js";
 
 // Raw text is deleted after 30 days: /api/cleanup runs daily and removes checks past expire_at.
 const KEEP_MS = 30 * 24 * 60 * 60 * 1000;

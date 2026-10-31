@@ -5,6 +5,10 @@
   "engines": {
     "node": "22.x"
   },
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check api/cleanup.js && node --check api/invite.js && node --check api/notify.js && node --check api/pair.js"
+  },
   "dependencies": {
     "firebase-admin": "^13.4.0"
   }

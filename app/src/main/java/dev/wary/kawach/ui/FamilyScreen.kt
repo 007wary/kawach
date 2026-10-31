@@ -45,6 +45,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.app.NotificationManagerCompat
 import androidx.credentials.exceptions.GetCredentialCancellationException
+import androidx.credentials.exceptions.NoCredentialException
 import dev.wary.kawach.R
 import dev.wary.kawach.family.ApiException
 import dev.wary.kawach.family.ElderPhones
@@ -103,6 +104,8 @@ private fun SetupPanel() {
                         Family.signInGuardian(context)
                     } catch (_: GetCredentialCancellationException) {
                         // The person closed the account picker.
+                    } catch (_: NoCredentialException) {
+                        error = R.string.error_no_google
                     } catch (e: CancellationException) {
                         throw e
                     } catch (e: Exception) {

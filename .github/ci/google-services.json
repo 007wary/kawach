@@ -1,0 +1,28 @@
+{
+  "_comment": "Placeholder for CI builds only. Fake values with the real package name; the app built from it cannot reach Firebase. The real file is app/google-services.json (gitignored, from `firebase apps:sdkconfig`).",
+  "project_info": {
+    "project_number": "000000000000",
+    "project_id": "kawach-ci-placeholder",
+    "storage_bucket": "kawach-ci-placeholder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:000000000000:android:0000000000000000000000",
+        "android_client_info": { "package_name": "dev.wary.kawach" }
+      },
+      "oauth_client": [
+        { "client_id": "000000000000-ciplaceholder.apps.googleusercontent.com", "client_type": 3 }
+      ],
+      "api_key": [{ "current_key": "AIzaSyCI-PLACEHOLDER-NOT-A-REAL-KEY-000" }],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            { "client_id": "000000000000-ciplaceholder.apps.googleusercontent.com", "client_type": 3 }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

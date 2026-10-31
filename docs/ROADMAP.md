@@ -127,7 +127,8 @@ Updated: 2026-10-31
 
 ### Vercel
 
-- Project `kawach` (scope 007warys-projects), deployed from `web/`.
+- Project `kawach` (scope 007warys-projects), connected to GitHub. Root Directory is `web`.
+- **To deploy, push to `main`.** Don't run `vercel deploy` from inside `web/`: with the Root Directory set, the CLI would look for `web/web`. Until the Root Directory was set on 2026-10-31, the first deploy from a push served a 404.
 - Production domain https://kawach-app.vercel.app. `kawach.vercel.app` was already taken.
 - Pages: `/` (home) and `/privacy` (the privacy policy for the Play listing). The policy names the developer and shows the contact email 007mwnswrangwary@gmail.com.
 - `/api/invite`, `/api/pair`, `/api/notify` and `/api/cleanup` (daily cron) are live. Functions run in `bom1` (Mumbai), next to Firestore.

@@ -151,6 +151,7 @@
     <string name="error_already_linked">आप इस परिवार सदस्य से पहले से जुड़े हैं।</string>
     <string name="error_too_many_tries">बहुत बार गलत कोड। एक घंटा रुककर फिर कोशिश करें।</string>
     <string name="error_network">कनेक्ट नहीं हो सका। इंटरनेट जाँचकर फिर कोशिश करें।</string>
+    <string name="error_no_google">पहले इस फ़ोन में Google खाता जोड़ें: सेटिंग्स, फिर खाते।</string>
     <string name="error_generic">कुछ गड़बड़ हुई। कृपया फिर कोशिश करें।</string>
     <string name="error_name">कृपया अपना नाम लिखें।</string>
     <string name="error_code_length">कोड में 6 अंक होते हैं।</string>

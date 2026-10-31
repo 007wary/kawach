@@ -1,0 +1,27 @@
+# Monthly update PRs, grouped so there is one PR per ecosystem. CI runs on each.
+# Kotlin is pinned at 2.1.20: libraries built with a much newer Kotlin may fail to compile, so check CI before merging.
+version: 2
+updates:
+  - package-ecosystem: gradle
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      gradle:
+        patterns: ["*"]
+
+  - package-ecosystem: npm
+    directory: /web
+    schedule:
+      interval: monthly
+    groups:
+      npm:
+        patterns: ["*"]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]

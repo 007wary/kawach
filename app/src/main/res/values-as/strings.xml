@@ -151,6 +151,7 @@
     <string name="error_already_linked">আপুনি এই সদস্যজনৰ সৈতে ইতিমধ্যে সংযোগ হৈ আছে।</string>
     <string name="error_too_many_tries">বহুবাৰ ভুল ক\'ড দিয়া হ\'ল। এঘণ্টা ৰৈ আকৌ চেষ্টা কৰক।</string>
     <string name="error_network">সংযোগ কৰিব পৰা নগ\'ল। ইণ্টাৰনেট পৰীক্ষা কৰি আকৌ চেষ্টা কৰক।</string>
+    <string name="error_no_google">প্ৰথমে এই ফোনত Google একাউণ্ট যোগ কৰক: ছেটিংছ, তাৰ পিছত একাউণ্ট।</string>
     <string name="error_generic">কিবা ভুল হ\'ল। অনুগ্ৰহ কৰি আকৌ চেষ্টা কৰক।</string>
     <string name="error_name">অনুগ্ৰহ কৰি আপোনাৰ নাম লিখক।</string>
     <string name="error_code_length">ক\'ডত ৬টা অংক থাকে।</string>

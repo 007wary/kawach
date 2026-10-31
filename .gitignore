@@ -11,3 +11,9 @@
 *.keystore
 *.jks
 google-services.json
+# Placeholder with fake values for CI builds (see README)
+!/.github/ci/google-services.json
+.kotlin/
+node_modules/
+firebase-debug.log*
+firestore-debug.log*

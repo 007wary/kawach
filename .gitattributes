@@ -1,0 +1,9 @@
+# One line-ending style in the repo (LF); Windows checkouts can still convert locally.
+* text=auto eol=lf
+*.bat text eol=crlf
+
+*.jar binary
+*.png binary
+*.jpg binary
+*.webp binary
+*.apk binary

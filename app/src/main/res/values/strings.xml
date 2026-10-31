@@ -151,6 +151,7 @@
     <string name="error_already_linked">You are already linked with this family member.</string>
     <string name="error_too_many_tries">Too many wrong codes. Wait an hour and try again.</string>
     <string name="error_network">Couldn\'t connect. Check the internet and try again.</string>
+    <string name="error_no_google">Add a Google account to this phone first: Settings, then Accounts.</string>
     <string name="error_generic">Something went wrong. Please try again.</string>
     <string name="error_name">Please type your name.</string>
     <string name="error_code_length">The code has 6 digits.</string>

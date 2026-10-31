@@ -71,12 +71,3 @@ function isStale(error) {
     "messaging/invalid-registration-token",
   ].includes(error?.code);
 }
-
-/** Same rule as Mask.kt, applied again in case an older app sends unmasked text. */
-export function maskNumbers(text) {
-  return text.replace(/\d(?:[ -]?\d){5,}/g, (match) => {
-    const digits = match.replace(/\D/g, "").length;
-    let seen = 0;
-    return match.replace(/\d/g, (d) => (++seen > digits - 2 ? d : "•"));
-  });
-}
