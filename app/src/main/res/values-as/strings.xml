@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Draft translation. Needs review by a native Assamese speaker before release. -->
+<resources>
+    <string name="language_name">অসমীয়া</string>
+    <string name="back">উভতি যাওক</string>
+
+    <string name="tab_home">মূল পৃষ্ঠা</string>
+    <string name="tab_learn">শিকক</string>
+    <string name="tab_help">সহায়</string>
+
+    <string name="home_status_ok">এই ফোনটো সুৰক্ষিত</string>
+    <string name="home_status_family">পৰিয়ালৰ সতৰ্কবাণী: এতিয়াও সংযোগ কৰা হোৱা নাই</string>
+    <string name="home_check_title">বাৰ্তা পৰীক্ষা কৰক</string>
+    <string name="home_check_sub">সন্দেহজনক SMS, WhatsApp বাৰ্তা বা পইচাৰ অনুৰোধ</string>
+    <string name="home_paste">পেষ্ট কৰি পৰীক্ষা কৰক</string>
+    <string name="home_clipboard_empty">এতিয়াও একো কপি কৰা হোৱা নাই। প্ৰথমে বাৰ্তাটো কপি কৰক, তাৰ পিছত আকৌ টিপক।</string>
+    <string name="home_paid">মই ইতিমধ্যে পইচা দিলোঁ। সহায় কৰক!</string>
+    <string name="home_learn_title">সাধাৰণ প্ৰতাৰণাবোৰ জানক</string>
+    <string name="home_learn_sub">ভাৰতত পৰিয়ালক লক্ষ্য কৰা ১০টা প্ৰতাৰণা</string>
+
+    <string name="check_title">বাৰ্তা পৰীক্ষা কৰক</string>
+    <string name="check_hint">বাৰ্তাটো ইয়াত পেষ্ট বা টাইপ কৰক</string>
+    <string name="check_paste">পেষ্ট</string>
+    <string name="check_button">পৰীক্ষা কৰক</string>
+    <string name="check_tip">পৰামৰ্শ: WhatsApp বা Messages-ত বাৰ্তাটো হেঁচি ধৰি থাকক, Share টিপক, তাৰ পিছত Kawach বাছক।</string>
+
+    <string name="result_title">ফলাফল</string>
+    <string name="risk_high">অতি বিপদজনক</string>
+    <string name="risk_medium">সাৱধান হওক</string>
+    <string name="risk_low">কোনো চিনাকি প্ৰতাৰণা পোৱা নগ\'ল</string>
+    <string name="result_why">সতৰ্কতাৰ চিন</string>
+    <string name="result_message">বাৰ্তাটো</string>
+    <string name="result_share">পৰিয়ালক পঠিয়াওক</string>
+    <string name="result_paid">মই পইচা দিলোঁ। সহায় লওক</string>
+    <string name="result_again">আন এটা বাৰ্তা পৰীক্ষা কৰক</string>
+    <string name="result_share_text">Kawach পৰীক্ষা: %1$s – %2$s\n\nবাৰ্তা:\n%3$s\n\nএকো কৰাৰ আগতে মোক ফোন কৰা।</string>
+
+    <string name="generic_high_title">এইটো প্ৰতাৰণা যেন লাগিছে</string>
+    <string name="generic_high_advice">ইয়াত কেইবাটাও সতৰ্কতাৰ চিন আছে। পইচা নিদিব, OTP বা PIN কাকো নিদিব, লিংক নুখুলিব। প্ৰথমে পৰিয়ালক সোধক।</string>
+    <string name="generic_medium_title">কিছুমান সতৰ্কতাৰ চিন</string>
+    <string name="generic_medium_advice">এতিয়াই একো নকৰিব। পৰিয়ালক সোধক, বা কোম্পানীৰ আনুষ্ঠানিক নম্বৰত ফোন কৰক।</string>
+    <string name="low_title">কোনো চিনাকি প্ৰতাৰণা নাই</string>
+    <string name="low_advice">Kawach-এ ইয়াত কোনো চিনাকি প্ৰতাৰণা বিচাৰি নাপালে, কিন্তু ই সুৰক্ষিত বুলি নিশ্চিত নহয়। যদি পইচা, OTP বা PIN বিচাৰে, প্ৰথমে পৰিয়ালক সোধক।</string>
+
+    <string name="help_title">পইচা দিলে বা OTP দিলে?</string>
+    <string name="help_golden">এতিয়াই কাম কৰক। প্ৰথম এঘণ্টাৰ ভিতৰত অভিযোগ কৰিলে বেংকে পইচা ৰখাৰ সম্ভাৱনা বেছি।</string>
+    <string name="help_call_label">চাইবাৰ প্ৰতাৰণা হেল্পলাইন (বিনামূলীয়া, ২৪ ঘণ্টা)</string>
+    <string name="help_call">1930ত ফোন কৰক</string>
+    <string name="help_step_1">1930ত ফোন কৰি লেনদেন বা UPI ৰেফাৰেন্স নম্বৰ দিয়ক।</string>
+    <string name="help_step_2">আপোনাৰ কাৰ্ডৰ পিছফালে থকা নম্বৰত বেংকক ফোন কৰি কাৰ্ড ব্লক কৰক।</string>
+    <string name="help_step_3">cybercrime.gov.in-ত প্ৰতাৰণাৰ অভিযোগ দিয়ক।</string>
+    <string name="help_step_4">কি হ\'ল পৰিয়ালক জনাওক।</string>
+    <string name="help_step_5">পইচা ঘূৰাই আনি দিম বুলি কোৱা কাকো পইচা নিদিব। সেয়া দ্বিতীয় প্ৰতাৰণা।</string>
+    <string name="help_portal">cybercrime.gov.in খোলক</string>
+    <string name="help_112">এতিয়াই বিপদত? 112ত ফোন কৰক।</string>
+
+    <string name="learn_title">সাধাৰণ প্ৰতাৰণা</string>
+
+    <string name="widget_label">Kawach পৰীক্ষা</string>
+    <string name="widget_description">এক টিপতে বাৰ্তা পৰীক্ষা কৰক</string>
+    <string name="widget_check">বাৰ্তা পৰীক্ষা কৰক</string>
+    <string name="widget_help">সহায় · 1930</string>
+    <string name="share_label">Kawach-ৰে পৰীক্ষা কৰক</string>
+
+    <string name="scam_digital_arrest_title">ডিজিটেল এৰেষ্ট প্ৰতাৰণা</string>
+    <string name="scam_digital_arrest_advice">আৰক্ষী, CBI বা কাষ্টমছে কেতিয়াও ভিডিঅ\' কলত কাকো গ্ৰেপ্তাৰ নকৰে আৰু গোচৰ বন্ধ কৰিবলৈ পইচা নিবিচাৰে। কলটো কাটি নম্বৰটো ব্লক কৰক।</string>
+    <string name="scam_bank_kyc_title">ভুৱা বেংক বা KYC বাৰ্তা</string>
+    <string name="scam_bank_kyc_advice">বেংকে কেতিয়াও OTP, PIN বা পাছৱৰ্ড নিবিচাৰে, আৰু SMS-ৰে একাউণ্ট ব্লক নকৰে। কাৰ্ডৰ পিছফালে থকা নম্বৰত ফোন কৰক।</string>
+    <string name="scam_upi_collect_title">UPI পইচাৰ ফান্দ</string>
+    <string name="scam_upi_collect_advice">পইচা পাবলৈ কেতিয়াও UPI PIN দিব নালাগে। PIN দিলে পইচা ওলাই যায়। অনুৰোধটো নাকচ কৰক।</string>
+    <string name="scam_investment_title">ভুৱা বিনিয়োগ বা ট্ৰেডিং আঁচনি</string>
+    <string name="scam_investment_advice">কোনেও দৈনিক উচ্চ লাভৰ নিশ্চয়তা দিব নোৱাৰে। এনে গোটে পইচা লৈ নোহোৱা হয়। যোগদান কৰিবলৈ পইচা নিদিব।</string>
+    <string name="scam_task_job_title">ভুৱা পাৰ্ট-টাইম চাকৰি</string>
+    <string name="scam_task_job_advice">সঁচা চাকৰিয়ে ভিডিঅ\' লাইক বা হোটেল ৰেটিঙৰ বাবে পইচা নিদিয়ে, আৰু আগতে পইচা নিবিচাৰে। চেটৰ পৰা ওলাই যাওক।</string>
+    <string name="scam_lottery_prize_title">ভুৱা লটাৰী বা পুৰস্কাৰ</string>
+    <string name="scam_lottery_prize_advice">আপুনি অংশ লোৱা নাই এনে লটাৰী জিকিব নোৱাৰে। সঁচা পুৰস্কাৰে আগতে মাচুল বা কৰ নিবিচাৰে।</string>
+    <string name="scam_electricity_bill_title">ভুৱা বিদ্যুৎ সংযোগ বিচ্ছিন্নৰ বাৰ্তা</string>
+    <string name="scam_electricity_bill_advice">বিদ্যুৎ বিভাগে আজি নিশা বিষয়াক ফোন কৰিবলৈ কৈ SMS নপঠিয়ায়। APDCL-ৰ আনুষ্ঠানিক এপ বা ৱেবছাইটত বিল চাওক।</string>
+    <string name="scam_family_emergency_title">ভুৱা পাৰিবাৰিক জৰুৰী অৱস্থা</string>
+    <string name="scam_family_emergency_advice">প্ৰতাৰকে বিপদত পৰা আত্মীয়ৰ ভাও ধৰে, কেতিয়াবা নকল মাতেৰে। পইচা দিয়াৰ আগতে সেই ব্যক্তিজনক পুৰণি নম্বৰত ফোন কৰক।</string>
+    <string name="scam_sextortion_title">ভিডিঅ\' ভাবুকি (ব্লেকমেইল) প্ৰতাৰণা</string>
+    <string name="scam_sextortion_advice">পইচা নিদিব। পইচা দিলে দাবী বাঢ়ে। নম্বৰটো ব্লক কৰক, স্ক্ৰীণশ্বট ৰাখক আৰু cybercrime.gov.in-ত অভিযোগ দিয়ক। আপোনাৰ কোনো দোষ নাই।</string>
+    <string name="scam_fake_delivery_title">ভুৱা পাৰ্চেল বা ডেলিভাৰী বাৰ্তা</string>
+    <string name="scam_fake_delivery_advice">কুৰিয়াৰ কোম্পানীয়ে SMS লিংকৰ জৰিয়তে পইচা বা এপ ইনষ্টল নিবিচাৰে। কেৱল আনুষ্ঠানিক ৱেবছাইটত ট্ৰেক কৰক।</string>
+
+    <string name="flag_official_threat">আৰক্ষী, CBI বা বিষয়া বুলি দাবী কৰে</string>
+    <string name="flag_arrest_threat">গ্ৰেপ্তাৰ বা গোচৰৰ ভাবুকি দিয়ে</string>
+    <string name="flag_video_call">ভিডিঅ\' কলত থাকিবলৈ কয়</string>
+    <string name="flag_secrecy">গোপন ৰাখিবলৈ কয়</string>
+    <string name="flag_safe_account">সুৰক্ষিত একাউণ্টলৈ পইচা পঠিয়াবলৈ কয়</string>
+    <string name="flag_urgency">এতিয়াই কাম কৰিবলৈ হেঁচা দিয়ে</string>
+    <string name="flag_asks_otp_pin">OTP, PIN বা ক\'ড বিচাৰে</string>
+    <string name="flag_account_block">একাউণ্ট বা KYC ব্লক হ\'ব বুলি কয়</string>
+    <string name="flag_receive_by_pin">পইচা পাবলৈ PIN বিচাৰে</string>
+    <string name="flag_asks_payment">পইচা বিচাৰে</string>
+    <string name="flag_prize_fee">পুৰস্কাৰ বা মাচুলৰ কথা কয়</string>
+    <string name="flag_too_good_returns">নিশ্চিত বা অতি বেছি লাভৰ প্ৰতিশ্ৰুতি দিয়ে</string>
+    <string name="flag_work_task">সৰু অনলাইন কামৰ বাবে পইচা দিয়াৰ কথা কয়</string>
+    <string name="flag_disconnection">বিদ্যুৎ সংযোগ কাটি দিয়াৰ ভাবুকি দিয়ে</string>
+    <string name="flag_emergency_money">বিপদত পৰা আত্মীয়ক পইচা লাগে</string>
+    <string name="flag_leak_threat">ভিডিঅ\' বা ফটো ভাইৰেল কৰাৰ ভাবুকি দিয়ে</string>
+    <string name="flag_parcel_issue">পাৰ্চেল আটক বা ডেলিভাৰী হোৱা নাই বুলি কয়</string>
+    <string name="flag_short_link">চুটি বা লুকুৱা লিংক আছে</string>
+    <string name="flag_apk_file">APK ফাইল ইনষ্টল কৰিবলৈ কয়</string>
+    <string name="flag_foreign_number">বিদেশী নম্বৰৰ পৰা আহিছে</string>
+</resources>

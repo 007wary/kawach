@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Kawach</string>
+    <string name="language_name">English</string>
+    <string name="back">Back</string>
+
+    <string name="tab_home">Home</string>
+    <string name="tab_learn">Learn</string>
+    <string name="tab_help">Help</string>
+
+    <string name="home_status_ok">Protected on this phone</string>
+    <string name="home_status_family">Family alerts: not set up yet</string>
+    <string name="home_check_title">Check a message</string>
+    <string name="home_check_sub">An SMS, WhatsApp message or payment request you are unsure about</string>
+    <string name="home_paste">Paste and check</string>
+    <string name="home_clipboard_empty">Nothing is copied yet. Copy the message first, then tap again.</string>
+    <string name="home_paid">I already paid. Help!</string>
+    <string name="home_learn_title">Know the common scams</string>
+    <string name="home_learn_sub">10 scams that target families in India</string>
+
+    <string name="check_title">Check a message</string>
+    <string name="check_hint">Paste or type the message here</string>
+    <string name="check_paste">Paste</string>
+    <string name="check_button">Check</string>
+    <string name="check_tip">Tip: in WhatsApp or Messages, press and hold the message, tap Share, then choose Kawach.</string>
+
+    <string name="result_title">Result</string>
+    <string name="risk_high">HIGH RISK</string>
+    <string name="risk_medium">BE CAREFUL</string>
+    <string name="risk_low">NO KNOWN SCAM FOUND</string>
+    <string name="result_why">Warning signs</string>
+    <string name="result_message">The message</string>
+    <string name="result_share">Send to family</string>
+    <string name="result_paid">I already paid. Get help</string>
+    <string name="result_again">Check another message</string>
+    <string name="result_share_text">Kawach check: %1$s – %2$s\n\nMessage:\n%3$s\n\nPlease call me before I do anything.</string>
+
+    <string name="generic_high_title">This looks like a scam</string>
+    <string name="generic_high_advice">It has several warning signs. Do not pay, do not share any OTP or PIN, and do not open links. Ask your family first.</string>
+    <string name="generic_medium_title">Some warning signs</string>
+    <string name="generic_medium_advice">Do not act on it yet. Ask your family, or call the company on the number from its official website or your passbook.</string>
+    <string name="low_title">No known scam pattern</string>
+    <string name="low_advice">Kawach did not find a known scam here, but that does not prove it is safe. If it asks for money, an OTP or a PIN, ask your family first.</string>
+
+    <string name="help_title">Already paid or shared an OTP?</string>
+    <string name="help_golden">Act now. Reporting within the first hour gives the bank the best chance to stop the money.</string>
+    <string name="help_call_label">Cyber fraud helpline (free, 24 hours)</string>
+    <string name="help_call">Call 1930</string>
+    <string name="help_step_1">Call 1930 and give the transaction or UPI reference number.</string>
+    <string name="help_step_2">Call your bank on the number on the back of your card and block it.</string>
+    <string name="help_step_3">Report the fraud on cybercrime.gov.in.</string>
+    <string name="help_step_4">Tell your family what happened.</string>
+    <string name="help_step_5">Do not pay anyone who promises to get your money back. That is a second scam.</string>
+    <string name="help_portal">Open cybercrime.gov.in</string>
+    <string name="help_112">In danger right now? Call 112.</string>
+
+    <string name="learn_title">Common scams</string>
+
+    <string name="widget_label">Kawach check</string>
+    <string name="widget_description">Check a message in one tap</string>
+    <string name="widget_check">Check a message</string>
+    <string name="widget_help">Help · 1930</string>
+    <string name="share_label">Check with Kawach</string>
+
+    <string name="scam_digital_arrest_title">Digital arrest scam</string>
+    <string name="scam_digital_arrest_advice">Police, CBI or customs never arrest anyone on a video call and never ask for money to close a case. Cut the call and block the number.</string>
+    <string name="scam_bank_kyc_title">Fake bank or KYC message</string>
+    <string name="scam_bank_kyc_advice">Banks never ask for your OTP, PIN or password, and never block accounts by SMS. Call the number on the back of your card.</string>
+    <string name="scam_upi_collect_title">UPI payment trap</string>
+    <string name="scam_upi_collect_advice">You never need to enter your UPI PIN to receive money. Entering the PIN sends money out. Decline the request.</string>
+    <string name="scam_investment_title">Fake investment or trading scheme</string>
+    <string name="scam_investment_advice">Nobody can guarantee high daily returns. These groups take your money and disappear. Do not pay to join.</string>
+    <string name="scam_task_job_title">Fake part-time job</string>
+    <string name="scam_task_job_advice">Real jobs never pay you to like videos or rate hotels, and never ask you to pay first. Leave the chat.</string>
+    <string name="scam_lottery_prize_title">Fake lottery or prize</string>
+    <string name="scam_lottery_prize_advice">You cannot win a lottery you never entered. Real prizes never ask for a fee or tax first.</string>
+    <string name="scam_electricity_bill_title">Fake electricity disconnection</string>
+    <string name="scam_electricity_bill_advice">The electricity office does not send SMS asking you to call an officer tonight. Check your bill on the official APDCL app or website.</string>
+    <string name="scam_family_emergency_title">Fake family emergency</string>
+    <string name="scam_family_emergency_advice">Scammers pretend to be a relative in trouble, sometimes with a copied voice. Call the person on their old number before paying.</string>
+    <string name="scam_sextortion_title">Video threat (blackmail) scam</string>
+    <string name="scam_sextortion_advice">Do not pay. Paying brings more demands. Block the caller, keep screenshots and report on cybercrime.gov.in. You are not at fault.</string>
+    <string name="scam_fake_delivery_title">Fake parcel or delivery message</string>
+    <string name="scam_fake_delivery_advice">Courier companies do not ask for payments or app installs through SMS links. Track only on the official website.</string>
+
+    <string name="flag_official_threat">Claims to be police, CBI or an officer</string>
+    <string name="flag_arrest_threat">Threatens arrest or a legal case</string>
+    <string name="flag_video_call">Asks you to stay on a video call</string>
+    <string name="flag_secrecy">Tells you to keep it secret</string>
+    <string name="flag_safe_account">Asks you to move money to a safe account</string>
+    <string name="flag_urgency">Pushes you to act immediately</string>
+    <string name="flag_asks_otp_pin">Asks for your OTP, PIN or code</string>
+    <string name="flag_account_block">Says your account or KYC will be blocked</string>
+    <string name="flag_receive_by_pin">Asks for your PIN to receive money</string>
+    <string name="flag_asks_payment">Asks for money</string>
+    <string name="flag_prize_fee">Talks about a prize or a fee</string>
+    <string name="flag_too_good_returns">Promises guaranteed or very high returns</string>
+    <string name="flag_work_task">Pays for simple online tasks</string>
+    <string name="flag_disconnection">Threatens to cut your electricity</string>
+    <string name="flag_emergency_money">A relative in trouble needs money</string>
+    <string name="flag_leak_threat">Threatens to leak a video or photos</string>
+    <string name="flag_parcel_issue">Says a parcel is held or undelivered</string>
+    <string name="flag_short_link">Has a short or hidden link</string>
+    <string name="flag_apk_file">Asks you to install an APK file</string>
+    <string name="flag_foreign_number">Comes from a foreign number</string>
+</resources>

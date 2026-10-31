@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Draft translation. Needs review by a native Hindi speaker before release. -->
+<resources>
+    <string name="language_name">हिन्दी</string>
+    <string name="back">वापस</string>
+
+    <string name="tab_home">होम</string>
+    <string name="tab_learn">जानें</string>
+    <string name="tab_help">मदद</string>
+
+    <string name="home_status_ok">यह फ़ोन सुरक्षित है</string>
+    <string name="home_status_family">परिवार अलर्ट: अभी सेट नहीं है</string>
+    <string name="home_check_title">संदेश जाँचें</string>
+    <string name="home_check_sub">कोई SMS, WhatsApp संदेश या पैसे की माँग जिस पर आपको शक हो</string>
+    <string name="home_paste">पेस्ट करके जाँचें</string>
+    <string name="home_clipboard_empty">अभी कुछ कॉपी नहीं हुआ है। पहले संदेश कॉपी करें, फिर दोबारा दबाएँ।</string>
+    <string name="home_paid">मैंने पैसे भेज दिए। मदद करें!</string>
+    <string name="home_learn_title">आम ठगी पहचानें</string>
+    <string name="home_learn_sub">भारत में परिवारों को निशाना बनाने वाली 10 ठगी</string>
+
+    <string name="check_title">संदेश जाँचें</string>
+    <string name="check_hint">संदेश यहाँ पेस्ट या टाइप करें</string>
+    <string name="check_paste">पेस्ट</string>
+    <string name="check_button">जाँचें</string>
+    <string name="check_tip">सुझाव: WhatsApp या Messages में संदेश को दबाकर रखें, Share दबाएँ, फिर Kawach चुनें।</string>
+
+    <string name="result_title">नतीजा</string>
+    <string name="risk_high">बहुत ख़तरनाक</string>
+    <string name="risk_medium">सावधान रहें</string>
+    <string name="risk_low">कोई जानी-पहचानी ठगी नहीं मिली</string>
+    <string name="result_why">चेतावनी के संकेत</string>
+    <string name="result_message">संदेश</string>
+    <string name="result_share">परिवार को भेजें</string>
+    <string name="result_paid">मैंने पैसे भेज दिए। मदद लें</string>
+    <string name="result_again">दूसरा संदेश जाँचें</string>
+    <string name="result_share_text">Kawach जाँच: %1$s – %2$s\n\nसंदेश:\n%3$s\n\nकुछ भी करने से पहले मुझे फ़ोन करें।</string>
+
+    <string name="generic_high_title">यह ठगी लगती है</string>
+    <string name="generic_high_advice">इसमें कई चेतावनी संकेत हैं। पैसे न भेजें, OTP या PIN किसी को न बताएँ, और लिंक न खोलें। पहले परिवार से पूछें।</string>
+    <string name="generic_medium_title">कुछ चेतावनी संकेत</string>
+    <string name="generic_medium_advice">अभी कुछ न करें। परिवार से पूछें, या कंपनी के आधिकारिक नंबर पर फ़ोन करें।</string>
+    <string name="low_title">कोई जानी-पहचानी ठगी नहीं</string>
+    <string name="low_advice">Kawach को यहाँ कोई जानी-पहचानी ठगी नहीं मिली, पर इसका मतलब यह नहीं कि यह सुरक्षित है। अगर पैसे, OTP या PIN माँगा जाए, तो पहले परिवार से पूछें।</string>
+
+    <string name="help_title">पैसे भेज दिए या OTP बता दिया?</string>
+    <string name="help_golden">अभी कदम उठाएँ। पहले एक घंटे में शिकायत करने से बैंक के पैसे रोकने की संभावना सबसे ज़्यादा होती है।</string>
+    <string name="help_call_label">साइबर ठगी हेल्पलाइन (मुफ़्त, 24 घंटे)</string>
+    <string name="help_call">1930 पर कॉल करें</string>
+    <string name="help_step_1">1930 पर कॉल करें और ट्रांज़ैक्शन या UPI रेफ़रेंस नंबर बताएँ।</string>
+    <string name="help_step_2">कार्ड के पीछे लिखे नंबर पर बैंक को कॉल करें और कार्ड ब्लॉक कराएँ।</string>
+    <string name="help_step_3">cybercrime.gov.in पर ठगी की शिकायत दर्ज करें।</string>
+    <string name="help_step_4">परिवार को बताएँ कि क्या हुआ।</string>
+    <string name="help_step_5">पैसे वापस दिलाने का वादा करने वाले किसी को पैसे न दें। वह दूसरी ठगी है।</string>
+    <string name="help_portal">cybercrime.gov.in खोलें</string>
+    <string name="help_112">अभी ख़तरे में हैं? 112 पर कॉल करें।</string>
+
+    <string name="learn_title">आम ठगी</string>
+
+    <string name="widget_label">Kawach जाँच</string>
+    <string name="widget_description">एक टैप में संदेश जाँचें</string>
+    <string name="widget_check">संदेश जाँचें</string>
+    <string name="widget_help">मदद · 1930</string>
+    <string name="share_label">Kawach से जाँचें</string>
+
+    <string name="scam_digital_arrest_title">डिजिटल अरेस्ट ठगी</string>
+    <string name="scam_digital_arrest_advice">पुलिस, CBI या कस्टम कभी वीडियो कॉल पर किसी को गिरफ़्तार नहीं करते और केस बंद करने के लिए पैसे नहीं माँगते। कॉल काटें और नंबर ब्लॉक करें।</string>
+    <string name="scam_bank_kyc_title">नकली बैंक या KYC संदेश</string>
+    <string name="scam_bank_kyc_advice">बैंक कभी OTP, PIN या पासवर्ड नहीं माँगते, और SMS से खाता ब्लॉक नहीं करते। कार्ड के पीछे लिखे नंबर पर कॉल करें।</string>
+    <string name="scam_upi_collect_title">UPI भुगतान का जाल</string>
+    <string name="scam_upi_collect_advice">पैसे पाने के लिए कभी UPI PIN डालने की ज़रूरत नहीं होती। PIN डालने से पैसे जाते हैं। अनुरोध अस्वीकार करें।</string>
+    <string name="scam_investment_title">नकली निवेश या ट्रेडिंग स्कीम</string>
+    <string name="scam_investment_advice">कोई भी रोज़ ऊँचे मुनाफ़े की गारंटी नहीं दे सकता। ऐसे ग्रुप पैसे लेकर गायब हो जाते हैं। जुड़ने के लिए पैसे न दें।</string>
+    <string name="scam_task_job_title">नकली पार्ट-टाइम नौकरी</string>
+    <string name="scam_task_job_advice">असली नौकरी वीडियो लाइक करने या होटल रेटिंग के पैसे नहीं देती, और पहले पैसे नहीं माँगती। चैट छोड़ दें।</string>
+    <string name="scam_lottery_prize_title">नकली लॉटरी या इनाम</string>
+    <string name="scam_lottery_prize_advice">जिस लॉटरी में आपने हिस्सा नहीं लिया, वह आप नहीं जीत सकते। असली इनाम पहले फ़ीस या टैक्स नहीं माँगता।</string>
+    <string name="scam_electricity_bill_title">नकली बिजली कटने का संदेश</string>
+    <string name="scam_electricity_bill_advice">बिजली विभाग आज रात किसी अधिकारी को कॉल करने के लिए SMS नहीं भेजता। बिल आधिकारिक ऐप या वेबसाइट पर देखें।</string>
+    <string name="scam_family_emergency_title">नकली पारिवारिक इमरजेंसी</string>
+    <string name="scam_family_emergency_advice">ठग मुसीबत में फँसे रिश्तेदार बनकर बात करते हैं, कभी-कभी नकली आवाज़ में। पैसे देने से पहले उस व्यक्ति को उसके पुराने नंबर पर कॉल करें।</string>
+    <string name="scam_sextortion_title">वीडियो धमकी (ब्लैकमेल) ठगी</string>
+    <string name="scam_sextortion_advice">पैसे न दें। पैसे देने से माँगें बढ़ती हैं। नंबर ब्लॉक करें, स्क्रीनशॉट रखें और cybercrime.gov.in पर शिकायत करें। आपकी कोई गलती नहीं है।</string>
+    <string name="scam_fake_delivery_title">नकली पार्सल या डिलीवरी संदेश</string>
+    <string name="scam_fake_delivery_advice">कूरियर कंपनियाँ SMS लिंक से भुगतान या ऐप इंस्टॉल करने को नहीं कहतीं। सिर्फ़ आधिकारिक वेबसाइट पर ट्रैक करें।</string>
+
+    <string name="flag_official_threat">पुलिस, CBI या अधिकारी होने का दावा</string>
+    <string name="flag_arrest_threat">गिरफ़्तारी या केस की धमकी</string>
+    <string name="flag_video_call">वीडियो कॉल पर बने रहने को कहता है</string>
+    <string name="flag_secrecy">बात छिपाकर रखने को कहता है</string>
+    <string name="flag_safe_account">सुरक्षित खाते में पैसे भेजने को कहता है</string>
+    <string name="flag_urgency">तुरंत कुछ करने का दबाव</string>
+    <string name="flag_asks_otp_pin">OTP, PIN या कोड माँगता है</string>
+    <string name="flag_account_block">खाता या KYC ब्लॉक होने की बात</string>
+    <string name="flag_receive_by_pin">पैसे पाने के लिए PIN माँगता है</string>
+    <string name="flag_asks_payment">पैसे माँगता है</string>
+    <string name="flag_prize_fee">इनाम या फ़ीस की बात</string>
+    <string name="flag_too_good_returns">गारंटीड या बहुत ज़्यादा मुनाफ़े का वादा</string>
+    <string name="flag_work_task">आसान ऑनलाइन काम के पैसे</string>
+    <string name="flag_disconnection">बिजली काटने की धमकी</string>
+    <string name="flag_emergency_money">मुसीबत में रिश्तेदार को पैसे चाहिए</string>
+    <string name="flag_leak_threat">वीडियो या फ़ोटो वायरल करने की धमकी</string>
+    <string name="flag_parcel_issue">पार्सल रुका या डिलीवर नहीं हुआ</string>
+    <string name="flag_short_link">छोटा या छिपा हुआ लिंक</string>
+    <string name="flag_apk_file">APK फ़ाइल इंस्टॉल करने को कहता है</string>
+    <string name="flag_foreign_number">विदेशी नंबर से आया है</string>
+</resources>
